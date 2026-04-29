@@ -1,5 +1,11 @@
-body {
+/* RESET */
+*{
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
 }
@@ -12,10 +18,37 @@ header {
     text-align: center;
 }
 
+/* NAV */
+nav {
+    background-color: #34495e;
+    padding: 12px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background-color: cadetblue;
+    color: #2c3e50;
+}
+
 /* SECCIÓN */
 section {
     padding: 20px;
-
 }
 
 h2 {
@@ -24,78 +57,38 @@ h2 {
 }
 
 
-
-/* NAVBAR */
-nav {
-    background-color: #34495e;
-    padding: 12px 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-}
-
-/* LISTA */
-.menu {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px; /* espacio entre opciones */
-    margin: 0;
-    padding: 0;
-}
-
-/* ITEMS */
-.menu li {
-    list-style: none;
-}
-
-/* LINKS */
-.menu a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    padding: 8px 12px;
-    border-radius: 5px;
-    transition: all 0.3s ease;
-}
-
-/* HOVER */
-.menu a:hover {
-    background-color: #f1c40f;
-    color: #2c3e50;
-}
-
-/* CONTENEDOR DE TARJETAS */
-.contenedor-restaurantes {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-/* TARJETA */
-.card {
+.custom-card {
     background-color: white;
-    width: calc(25% - 20px); /* 4 por fila */
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     transition: transform 0.3s;
+
+    /* CLAVE PARA IGUALAR TODO */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
-.card:hover {
+.custom-card:hover {
     transform: scale(1.05);
 }
 
-/* IMAGEN */
-.card img {
+
+.custom-card img {
     width: 100%;
-    height: 180px;
-    object-fit: cover;
+    height: 180px;          /* TODAS MISMA ALTURA */
+    object-fit: cover;      /* recorta sin deformar */
 }
 
 /* CONTENIDO */
 .card-body {
     padding: 15px;
+
+    /* CLAVE */
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 /* TITULO */
@@ -110,9 +103,11 @@ nav {
     margin: 10px 0;
 }
 
-/* PRECIO */
+/* PRECIO SIEMPRE ABAJO */
 .precio {
     font-weight: bold;
     color: #27ae60;
     font-size: 18px;
+
+    margin-top: auto; /* empuja hacia abajo */
 }
