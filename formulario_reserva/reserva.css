@@ -1,0 +1,160 @@
+/* ==============================
+   RESET
+   ============================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+
+/* ==============================
+   HEADER
+   ============================== */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+
+/* ==============================
+   NAV
+   ============================== */
+nav {
+    background-color: #34495e;
+    padding: 12px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    background-color: cadetblue;
+    color: #2c3e50;
+}
+
+
+/* ==============================
+   TÍTULO DE SECCIÓN
+   ============================== */
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+
+/* ==============================
+   TARJETA DEL FORMULARIO
+   ============================== */
+.form-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    padding: 30px;
+    max-width: 750px;
+    margin: 0 auto 40px;
+}
+
+
+/* ==============================
+   FIELDSET Y LEGEND
+   Los fieldset agrupan cada sección
+   del formulario visualmente.
+   ============================== */
+fieldset {
+    border: 1px solid #dce1e7;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+legend {
+    font-weight: bold;
+    color: #2c3e50;
+    padding: 0 8px;
+    font-size: 0.95rem;
+}
+
+
+/* ==============================
+   INPUTS Y SELECT
+   ============================== */
+.form-control,
+.form-select {
+    border: 1.5px solid #d5dde8;
+    border-radius: 6px;
+    color: #2c3e50;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: #2c3e50;
+    box-shadow: 0 0 0 3px rgba(44,62,80,0.1);
+}
+
+textarea.form-control {
+    resize: vertical;
+}
+
+
+/* ==============================
+   LABELS
+   ============================== */
+.form-label {
+    font-weight: 600;
+    color: #2c3e50;
+    font-size: 0.9rem;
+}
+
+
+/* ==============================
+   BOTONES
+   Usamos los colores de Bootstrap
+   pero sobreescribimos btn-primary
+   para que combine con el header.
+   ============================== */
+.btn-primary {
+    background-color: #2c3e50;
+    border-color: #2c3e50;
+}
+
+.btn-primary:hover {
+    background-color: #1a252f;
+    border-color: #1a252f;
+}
+
+
+/* ==============================
+   MODAL
+   ============================== */
+.modal-header {
+    background-color: #2c3e50;
+    color: white;
+}
+
+/* El botón X del modal es oscuro por defecto,
+   filter: invert lo pone en blanco */
+.modal-header .btn-close {
+    filter: invert(1);
+}
