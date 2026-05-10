@@ -16,50 +16,48 @@
 
 <nav>
     <ul class="menu">
-        <li><a href="#">Todas</a></li>
-        <li><a href="#">Carnes</a></li>
-        <li><a href="#">Sushi</a></li>
-        <li><a href="#">Típico</a></li>
-        <li><a href="#">Mariscos</a></li>
-        <li><a href="#">Vegano</a></li>
-        <li><a href="#">Comidas rápidas</a></li>
+        <li><a href="#" data-categoria="todas" class="activo">Todas</a></li>
+        <li><a href="#" data-categoria="carnes">Carnes</a></li>
+        <li><a href="#" data-categoria="sushi">Sushi</a></li>
+        <li><a href="#" data-categoria="tipico">Típico</a></li>
+        <li><a href="#" data-categoria="mariscos">Mariscos</a></li>
+        <li><a href="#" data-categoria="vegano">Vegano</a></li>
+        <li><a href="#" data-categoria="rapidas">Comidas rápidas</a></li>
+        <li><a href="#mis-reservas">Mis reservas</a></li>
     </ul>
 </nav>
 
+<!-- RESTAURANTES -->
 <section class="container mt-4">
     <h2>Restaurantes disponibles</h2>
 
-    <div class="row g-4">
+    <div class="row g-4" id="lista-restaurantes">
 
-        <!-- CARD -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-categoria="tipico">
             <div class="card custom-card">
                 <img src="../multimedia/sabor.avif">
                 <div class="card-body">
                     <h3>Restaurante El Sabor</h3>
                     <p class="descripcion">Deliciosa comida típica colombiana.</p>
                     <p class="precio">$25.000</p>
-                    <!-- ../formulario_reserva/ sube una carpeta y entra a formulario_reserva -->
                     <a href="../formulario_reserva/reserva.html" class="btn btn-primary btn-lg">Reservar</a>
                 </div>
             </div>
         </div>
 
-        <!-- CARD -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-categoria="rapidas">
             <div class="card custom-card">
-                <img src="https://via.placeholder.com/300x200">
+                <img src="../multimedia/pizza.webp">
                 <div class="card-body">
                     <h3>Restaurante Pizza Express</h3>
                     <p class="descripcion">Las mejores pizzas artesanales.</p>
                     <p class="precio">$45.000</p>
-                    <a href="../multimedia/pizza.webp" class="btn btn-primary btn-lg">Reservar</a>
+                    <a href="../formulario_reserva/reserva.html" class="btn btn-primary btn-lg">Reservar</a>
                 </div>
             </div>
         </div>
 
-        <!-- CARD -->
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-categoria="sushi">
             <div class="card custom-card">
                 <img src="../multimedia/mariscos.webp">
                 <div class="card-body">
@@ -71,9 +69,9 @@
             </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-categoria="rapidas">
             <div class="card custom-card">
-                <img src="https://via.placeholder.com/300x200">
+                <img src="../multimedia/hamburguesa.png">
                 <div class="card-body">
                     <h3>Hamburguesas artesanales</h3>
                     <p class="descripcion">Este es el momento para compartir en familia</p>
@@ -83,9 +81,9 @@
             </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-categoria="rapidas">
             <div class="card custom-card">
-                <img src="https://via.placeholder.com/300x200">
+                <img src="../multimedia/limonada.jpg">
                 <div class="card-body">
                     <h3>La Jarra de limonada</h3>
                     <p class="descripcion">Bebidas para refrescar tu dia</p>
@@ -95,9 +93,9 @@
             </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-categoria="tipico">
             <div class="card custom-card">
-                <img src="https://via.placeholder.com/300x200">
+                <img src="../multimedia/frijoles.jpg">
                 <div class="card-body">
                     <h3>El gran sabor</h3>
                     <p class="descripcion">Para disfrutar de tus viajes, apunta a un gran sabor</p>
@@ -107,9 +105,9 @@
             </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-categoria="sushi">
             <div class="card custom-card">
-                <img src="https://via.placeholder.com/300x200">
+                <img src="../multimedia/postres.jpg">
                 <div class="card-body">
                     <h3>Postres lolita</h3>
                     <p class="descripcion">Endulza tu dia</p>
@@ -119,9 +117,9 @@
             </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-categoria="vegano">
             <div class="card custom-card">
-                <img src="https://via.placeholder.com/300x200">
+                <img src="../multimedia/vegana.jpg">
                 <div class="card-body">
                     <h3>Casa Vegana</h3>
                     <p class="descripcion">un lugar unico para ti</p>
@@ -131,9 +129,9 @@
             </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-categoria="tipico">
             <div class="card custom-card">
-                <img src="https://via.placeholder.com/300x200">
+                <img src="../multimedia/mexicana.jpg">
                 <div class="card-body">
                     <h3>La Mexicana</h3>
                     <p class="descripcion">Disfruta de una experiencia única con comida típica de México</p>
@@ -143,9 +141,9 @@
             </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-categoria="mariscos">
             <div class="card custom-card">
-                <img src="https://via.placeholder.com/300x200">
+                <img src="../multimedia/caribe.jpg">
                 <div class="card-body">
                     <h3>Comida del caribe</h3>
                     <p class="descripcion">Disfruta de la mejor comida de mar</p>
@@ -155,9 +153,9 @@
             </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-categoria="carnes">
             <div class="card custom-card">
-                <img src="https://via.placeholder.com/300x200">
+                <img src="../multimedia/plancha.jpg">
                 <div class="card-body">
                     <h3>La plancha del sabor</h3>
                     <p class="descripcion">La mejor comida a la plancha</p>
@@ -167,9 +165,9 @@
             </div>
         </div>
 
-        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-categoria="rapidas">
             <div class="card custom-card">
-                <img src="https://via.placeholder.com/300x200">
+                <img src="../multimedia/pollo.jpg">
                 <div class="card-body">
                     <h3>Chiken</h3>
                     <p class="descripcion">Pollo fresco para compartir con amigos</p>
@@ -179,8 +177,74 @@
             </div>
         </div>
 
+    
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-categoria="carnes">
+            <div class="card custom-card">
+                <img src="../multimedia/plancha.jpg">
+                <div class="card-body">
+                    <h3>Parrilla Don Carlos</h3>
+                    <p class="descripcion">Los mejores cortes de carne a la parrilla</p>
+                    <p class="precio">$89.000</p>
+                    <a href="../formulario_reserva/reserva.html" class="btn btn-primary btn-lg">Reservar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-categoria="mariscos">
+            <div class="card custom-card">
+                <img src="../multimedia/caribe.jpg">
+                <div class="card-body">
+                    <h3>Mar y Sabor</h3>
+                    <p class="descripcion">Langosta, camarones y corvina frescos</p>
+                    <p class="precio">$120.000</p>
+                    <a href="../formulario_reserva/reserva.html" class="btn btn-primary btn-lg">Reservar</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" data-categoria="vegano">
+            <div class="card custom-card">
+                <img src="../multimedia/vegana.jpg">
+                <div class="card-body">
+                    <h3>Raices Verdes</h3>
+                    <p class="descripcion">Cocina orgánica y 100% vegana llena de sabor</p>
+                    <p class="precio">$65.000</p>
+                    <a href="../formulario_reserva/reserva.html" class="btn btn-primary btn-lg">Reservar</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Mensaje cuando no hay resultados en esa categoría -->
+    <p id="sin-resultados" style="display:none; text-align:center; margin-top:30px; color:#555;">
+        No hay restaurantes en esta categoría.
+    </p>
+
+</section>
+
+
+<!-- SECCIÓN MIS RESERVAS -->
+<section class="container mt-5" id="mis-reservas">
+    <h2>Mis Reservas</h2>
+    <div id="contenedor-reservas">
+        <p id="sin-reservas" style="text-align:center; color:#555; margin-top:20px;">
+            No tienes reservas aún. ¡Haz tu primera reserva!
+        </p>
     </div>
 </section>
+
+
+<a href="https://wa.me/573007279334?text=Hola%2C%20necesito%20ayuda%20con%20mi%20reserva"
+   target="_blank"
+   class="boton-whatsapp">
+¿Necesitas ayuda?
+</a>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="styles.js"></script>
 
 </body>
 </html>

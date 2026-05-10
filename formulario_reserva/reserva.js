@@ -1,42 +1,78 @@
-// Establece la fecha mínima como hoy,
-// así el usuario no puede elegir fechas pasadas
-document.addEventListener('DOMContentLoaded', function () {
-    const hoy = new Date().toISOString().split('T')[0];
-    document.getElementById('fecha').min = hoy;
-});
+// ==============================
+// reserva.js
+// Guarda la reserva en localStorage
+// ==============================
 
-
-// Se ejecuta al hacer clic en "Confirmar Reserva"
 function confirmarReserva() {
 
-    // Campos obligatorios que deben estar llenos
-    const campos = [
-        { id: 'nombre',   nombre: 'Nombre' },
-        { id: 'apellido', nombre: 'Apellido' },
-        { id: 'email',    nombre: 'Correo electrónico' },
-        { id: 'telefono', nombre: 'Teléfono' },
-        { id: 'fecha',    nombre: 'Fecha' },
-        { id: 'hora',     nombre: 'Hora' },
-    ];
+    // Lee los valores del formulario
+    var nombre   = document.getElementById('nombre').value.trim();
+    var apellido = document.getElementById('apellido').value.trim();
+    var email    = document.getElementById('email').value.trim();
+    var telefono = document.getElementById('telefono').value.trim();
+    var fecha    = document.getElementById('fecha').value;
+    var hora     = document.getElementById('hora').value;
+    var personas = document.getElementById('personas').value;
+    var zona     = document.getElementById('zona').value;
+    var notas    = document.getElementById('notas').value.trim();
+    var terminos = document.getElementById('terminos').checked;
 
-    // Recorre cada campo y verifica que no esté vacío
-    for (const campo of campos) {
-        const input = document.getElementById(campo.id);
-
-        if (input.value.trim() === '') {
-            alert('Por favor completa el campo: ' + campo.nombre);
-            input.focus();
-            return; // Detiene la función si hay un campo vacío
-        }
-    }
-
-    // Verifica que el checkbox de términos esté marcado
-    if (!document.getElementById('terminos').checked) {
-        alert('Debes aceptar los Términos y Condiciones.');
+    // Validación: todos los campos obligatorios deben estar llenos
+    if (!nombre || !apellido || !email || !telefono || !fecha || !hora || !personas) {
+        alert('Por favor completa todos los campos obligatorios (*).');
         return;
     }
 
-    // Si todo está bien, muestra el modal de confirmación
-    const modal = new bootstrap.Modal(document.getElementById('modalExito'));
+    if (!terminos) {
+        alert('Debes aceptar los Términos y Condiciones para continuar.');
+        return;
+    }
+
+    // Crea el objeto con los datos de la reserva
+    var nuevaReserva = {
+        id:          Date.now(),   // número único basado en la hora actual
+        restaurante: obtenerNombreRestaurante(),
+        nombre:      nombre,
+        apellido:    apellido,
+        email:       email,
+        telefono:    telefono,
+        fecha:       fecha,
+        hora:        hora,
+        personas:    personas,
+        zona:        zona,
+        notas:       notas
+    };
+
+    // Lee las reservas que ya hay guardadas
+    var reservasGuardadas = localStorage.getItem('reservas');
+    var lista = reservasGuardadas ? JSON.parse(reservasGuardadas) : [];
+
+    // Agrega la nueva reserva a la lista
+    lista.push(nuevaReserva);
+
+    // Guarda la lista actualizada
+    localStorage.setItem('reservas', JSON.stringify(lista));
+
+    // Muestra el modal de éxito (Bootstrap)
+    var modal = new bootstrap.Modal(document.getElementById('modalExito'));
     modal.show();
+
+    // Limpia el formulario
+    document.getElementById('nombre').value   = '';
+    document.getElementById('apellido').value = '';
+    document.getElementById('email').value    = '';
+    document.getElementById('telefono').value = '';
+    document.getElementById('fecha').value    = '';
+    document.getElementById('hora').value     = '';
+    document.getElementById('personas').value = 2;
+    document.getElementById('zona').value     = '';
+    document.getElementById('notas').value    = '';
+    document.getElementById('terminos').checked = false;
+}
+
+
+
+function obtenerNombreRestaurante() {
+    var params = new URLSearchParams(window.location.search);
+    return params.get('restaurante') || 'Restaurante';
 }
